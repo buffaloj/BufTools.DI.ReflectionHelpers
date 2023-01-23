@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ReflectionHelpers.Tests.ExampleModels;
 using BufTools.DI.ReflectionHelpers;
+using ReflectionHelpers.Tests.ExampleAttributes;
 
 namespace ReflectionHelpers.Tests
 {
@@ -76,14 +77,13 @@ namespace ReflectionHelpers.Tests
         public void AddScopedClasses_WithNonInheritedClassType_RegistersClass()
         {
             var sc = new ServiceCollection();
-
-            sc.AddScopedClasses<PlainClass>(_assembly);
+            sc.AddScopedClassesWithAttribute<RegisterMeForDIAttribute>(_assembly);
             var provider = sc.BuildServiceProvider();
 
             Assert.IsTrue(CanMakeInstance<PlainClass>(provider));
             Assert.IsFalse(CanMakeInstance<BaseClass>(provider));
             Assert.IsFalse(CanMakeInstance<SuperClassOne>(provider));
-            Assert.IsFalse(CanMakeInstance<SuperClassTwo>(provider));
+            Assert.IsTrue(CanMakeInstance<SuperClassTwo>(provider));
         }
 
         private bool CanMakeInstance<TClass>(IServiceProvider provider)
@@ -91,5 +91,7 @@ namespace ReflectionHelpers.Tests
         {
             return provider.GetService<TClass>() != null;
         }
+
+
     }
 }

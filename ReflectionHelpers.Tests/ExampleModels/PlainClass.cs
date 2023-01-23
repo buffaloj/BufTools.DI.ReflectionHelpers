@@ -1,5 +1,8 @@
-﻿namespace ReflectionHelpers.Tests.ExampleModels
+﻿using ReflectionHelpers.Tests.ExampleAttributes;
+
+namespace ReflectionHelpers.Tests.ExampleModels
 {
+    [RegisterMeForDI]
     public class PlainClass
     {
     }
