@@ -12,6 +12,8 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>di;dependencyinjection;convenience</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile />
   </PropertyGroup>
 
   <ItemGroup>
