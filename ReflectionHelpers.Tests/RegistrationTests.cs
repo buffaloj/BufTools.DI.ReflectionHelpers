@@ -91,7 +91,5 @@ namespace ReflectionHelpers.Tests
         {
             return provider.GetService<TClass>() != null;
         }
-
-
     }
 }
