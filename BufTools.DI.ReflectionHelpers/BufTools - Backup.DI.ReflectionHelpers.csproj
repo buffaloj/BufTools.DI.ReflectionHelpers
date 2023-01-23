@@ -16,8 +16,6 @@
     <DocumentationFile />
     <AssemblyVersion>1.0.1</AssemblyVersion>
     <FileVersion>1.0.1</FileVersion>
-    <Description>This provides convenience methods to register dependencies for injection for all classes of base type T, and all classes with a specified [Attribute]</Description>
-    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
