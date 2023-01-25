@@ -4,20 +4,21 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>DI Registration Helpers</Title>
-    <Company>Jeremy Shull)</Company>
+    <Company>$(Authors)</Company>
     <Copyright>Copyright (c) Jeremy Shull, 2023</Copyright>
     <PackageProjectUrl>https://github.com/buffaloj/BufTools.DI.ReflectionHelpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/buffaloj/BufTools.DI.ReflectionHelpers</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>di;dependencyinjection;convenience</PackageTags>
+    <PackageTags>di;dependencyinjection;convenience;reflection</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DocumentationFile />
-    <AssemblyVersion>1.0.1</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
     <Description>This provides convenience methods to register dependencies for injection for all classes of base type T, and all classes with a specified [Attribute]</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <Authors>Jeremy Shull</Authors>
   </PropertyGroup>
 
   <ItemGroup>
