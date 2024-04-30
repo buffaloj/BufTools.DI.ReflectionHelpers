@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufTools.Extensions.DependencyInjection", "BufTools.Extensions.DependencyInjection\BufTools.Extensions.DependencyInjection.csproj", "{35D6897C-3E84-4865-A2D3-E6E517AD7E4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufTools.Extensions.DependencyInjection.Tests", "BufTools.Extensions.DependencyInjection.Tests\BufTools.Extensions.DependencyInjection.Tests.csproj", "{DF06553B-ECAB-4149-A375-969D86A7D631}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufTools.Extensions.Reflection", "BufTools.Extensions.Reflection\BufTools.Extensions.Reflection.csproj", "{6E8D4388-304E-4D83-8F62-7C71C3CCF3C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufTools.Extensions.Reflection.Tests", "BufTools.Extensions.Reflection.Tests\BufTools.Extensions.Reflection.Tests.csproj", "{27911D51-B83A-46DB-B779-696E434D3C40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufTools.Extensions.XmlComments", "BufTools.Extensions.XmlComments\BufTools.Extensions.XmlComments.csproj", "{D54DC7AD-C7A5-4DC5-B391-A401F5249577}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BufTools.Extensions.XmlComments.Tests", "BufTools.Extensions.XmlComments.Tests\BufTools.Extensions.XmlComments.Tests.csproj", "{78310B33-8CB8-4EF4-AE9A-4720DD93399F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35D6897C-3E84-4865-A2D3-E6E517AD7E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D6897C-3E84-4865-A2D3-E6E517AD7E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D6897C-3E84-4865-A2D3-E6E517AD7E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D6897C-3E84-4865-A2D3-E6E517AD7E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF06553B-ECAB-4149-A375-969D86A7D631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF06553B-ECAB-4149-A375-969D86A7D631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF06553B-ECAB-4149-A375-969D86A7D631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF06553B-ECAB-4149-A375-969D86A7D631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E8D4388-304E-4D83-8F62-7C71C3CCF3C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E8D4388-304E-4D83-8F62-7C71C3CCF3C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E8D4388-304E-4D83-8F62-7C71C3CCF3C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E8D4388-304E-4D83-8F62-7C71C3CCF3C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27911D51-B83A-46DB-B779-696E434D3C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27911D51-B83A-46DB-B779-696E434D3C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27911D51-B83A-46DB-B779-696E434D3C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27911D51-B83A-46DB-B779-696E434D3C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54DC7AD-C7A5-4DC5-B391-A401F5249577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54DC7AD-C7A5-4DC5-B391-A401F5249577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54DC7AD-C7A5-4DC5-B391-A401F5249577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54DC7AD-C7A5-4DC5-B391-A401F5249577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78310B33-8CB8-4EF4-AE9A-4720DD93399F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78310B33-8CB8-4EF4-AE9A-4720DD93399F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78310B33-8CB8-4EF4-AE9A-4720DD93399F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78310B33-8CB8-4EF4-AE9A-4720DD93399F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F990832-1D99-48D6-AD09-BB878411184A}
+	EndGlobalSection
+EndGlobal

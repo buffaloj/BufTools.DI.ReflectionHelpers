@@ -3,7 +3,7 @@ using System.Linq;
 using System;
 using System.Reflection;
 
-namespace BufTools.DI.ReflectionHelpers
+namespace BufTools.Extensions.DependencyInjection
 {
     /// <summary>
     /// A set of convenience methods to register multiple classes of a type or with an attribute for dependency injection

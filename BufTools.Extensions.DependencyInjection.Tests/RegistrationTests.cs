@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ReflectionHelpers.Tests.ExampleModels;
-using BufTools.DI.ReflectionHelpers;
+using BufTools.Extensions.DependencyInjection;
 using ReflectionHelpers.Tests.ExampleAttributes;
 
 namespace ReflectionHelpers.Tests
