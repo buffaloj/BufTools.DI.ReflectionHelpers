@@ -65,5 +65,14 @@ namespace BufTools.Extensions.Reflection
             string path = Uri.UnescapeDataString(uri.Path);
             return Path.GetDirectoryName(path);
         }
+
+        public static Type[] GetConcreteTypesWithAttribute<TAttribute>(this Assembly assembly)
+        {
+            return assembly.GetTypes()
+                .Where(t => t.GetCustomAttributes(typeof(TAttribute), true).Any() &&
+                            !t.IsInterface &&
+                            !t.IsAbstract)
+                .ToArray();
+        }
     }
 }
