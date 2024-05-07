@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Reflection Extensions</Title>
+    <Title>DI Registration Helpers</Title>
     <Company>$(Authors)</Company>
     <Copyright>Copyright (c) Jeremy Shull, 2023</Copyright>
-    <PackageProjectUrl>https://github.com/buffaloj/BufTools.Extensions/tree/main/BufTools.Extensions.Reflection</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/buffaloj/BufTools.Extensions</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/buffaloj/BufTools.Extensions/tree/main/BufTools.Extensions.XmlComments</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/buffaloj/BufTools.DI.ReflectionHelpers</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>di;dependencyinjection;convenience;reflection</PackageTags>
@@ -16,10 +16,9 @@
     <DocumentationFile />
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <FileVersion>2.0.0</FileVersion>
-    <Description>This provides convenience methods to to find classes by type and with attributes.</Description>
+    <Description>This provides convenience methods load XML documentation, and seach for docs on classes, methods, and properties.</Description>
     <Version>2.0.0</Version>
     <Authors>Jeremy Shull</Authors>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +34,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BufTools.Extensions.Reflection\BufTools.Extensions.Reflection.csproj" />
   </ItemGroup>
 
 </Project>

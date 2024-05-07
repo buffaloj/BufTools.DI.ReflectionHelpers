@@ -3,10 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>Reflection Extensions</Title>
+    <Title>DI Registration Helpers</Title>
     <Company>$(Authors)</Company>
     <Copyright>Copyright (c) Jeremy Shull, 2023</Copyright>
-    <PackageProjectUrl>https://github.com/buffaloj/BufTools.Extensions/tree/main/BufTools.Extensions.Reflection</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/buffaloj/BufTools.Extensions/tree/main/BufTools.Extensions.DependencyInjection</PackageProjectUrl>
     <RepositoryUrl>https://github.com/buffaloj/BufTools.Extensions</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -16,10 +16,9 @@
     <DocumentationFile />
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <FileVersion>2.0.0</FileVersion>
-    <Description>This provides convenience methods to to find classes by type and with attributes.</Description>
+    <Description>This provides convenience methods to register dependencies for injection for all classes of base type T, and all classes with a specified [Attribute]</Description>
     <Version>2.0.0</Version>
     <Authors>Jeremy Shull</Authors>
-    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,14 +26,17 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
