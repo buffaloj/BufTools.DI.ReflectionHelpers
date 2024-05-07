@@ -42,6 +42,22 @@ namespace BufTools.Extensions.Reflection
         }
 
         /// <summary>
+        /// Gets all concrete class types that are of type T or inherit from type T
+        /// </summary>
+        /// <param name="assembly">The assembly to reflect on</param>
+        /// <param name="type">The type to search for</param>
+        /// <returns>All concrete classes that are of TYPE T inherit from TYPE T </returns>
+        /// <remarks>If you ask for all types of an interface, you will get the concrete classes that implement it but not the interface Type itself</remarks>
+        /// <remarks>If you ask for all types of an abstract class, you will get the concrete classes that implement it but not the abstract class Type itself</remarks>
+        public static Type[] GetClasses(this Assembly assembly, Type type)
+        {
+            return assembly.GetTypes().Where(t => type.IsAssignableFrom(t) &&
+                                                  !t.IsInterface &&
+                                                  !t.IsAbstract)
+                           .ToArray();
+        }
+
+        /// <summary>
         /// Gets all class types in an assembly
         /// </summary>
         /// <param name="assembly">The assembly to fetch classes from</param>

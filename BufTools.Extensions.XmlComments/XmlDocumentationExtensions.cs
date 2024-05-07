@@ -10,8 +10,16 @@ using System.Xml;
 
 namespace BufTools.Extensions.XmlComments
 {
+    /// <summary>
+    /// A set of extension methods to ease fetching XML comments from code
+    /// </summary>
     public static class XmlDocumentationExtensions
     {
+        /// <summary>
+        /// Load XML documentation for an assembly and parses into a data structure to later use
+        /// </summary>
+        /// <param name="assembly">The assembly to load docs for</param>
+        /// <returns>A dictionary of the XML values</returns>
         public static IDictionary<string, MemberDoc> LoadXmlDocumentation(this Assembly assembly)
         {
             var xmlDirectoryPath = assembly.GetDirectoryPath();
@@ -19,11 +27,14 @@ namespace BufTools.Extensions.XmlComments
 
             if (!File.Exists(xmlFilePath))
                 return null;
-            //throw new FileNotFoundException(string.Format(ProjectResources.XmlFileNotFoundFormat, xmlFilePath));
 
             return LoadXmlDocumentation(File.ReadAllText(xmlFilePath));
         }
 
+        /// <summary>
+        /// Load XML documentation from a file and parses into a data structure to later use
+        /// </summary>
+        /// <returns>A dictionary of the XML values</returns>
         public static IDictionary<string, MemberDoc> LoadXmlDocumentation(string xmlDocumentation)
         {
             var loadedXmlDocumentation = new Dictionary<string, MemberDoc>();
@@ -93,6 +104,12 @@ namespace BufTools.Extensions.XmlComments
             return loadedXmlDocumentation;
         }
 
+        /// <summary>
+        /// Fetches documentation a class, struct, or interface
+        /// </summary>
+        /// <param name="xmlDocumentation">The doc source</param>
+        /// <param name="type">The type to get docs for</param>
+        /// <returns></returns>
         public static MemberDoc GetDocumentation(this IDictionary<string, MemberDoc> xmlDocumentation, Type type)
         {
             var key = "T:" + XmlDocumentationKeyHelper(type.FullName, null);
@@ -100,6 +117,12 @@ namespace BufTools.Extensions.XmlComments
             return documentation;
         }
 
+        /// <summary>
+        /// Fetches documentation for a property
+        /// </summary>
+        /// <param name="xmlDocumentation">The doc source</param>
+        /// <param name="propertyInfo">The property to get docs for</param>
+        /// <returns></returns>
         public static MemberDoc GetDocumentation(this IDictionary<string, MemberDoc> xmlDocumentation, PropertyInfo propertyInfo)
         {
             var key = "P:" + XmlDocumentationKeyHelper(propertyInfo.DeclaringType.FullName, propertyInfo.Name);
@@ -107,6 +130,12 @@ namespace BufTools.Extensions.XmlComments
             return documentation;
         }
 
+        /// <summary>
+        /// Fetches documentation for a method
+        /// </summary>
+        /// <param name="xmlDocumentation">The doc source</param>
+        /// <param name="methodInfo">The method to get docs for</param>
+        /// <returns></returns>
         public static MemberDoc GetDocumentation(this IDictionary<string, MemberDoc> xmlDocumentation, MethodInfo methodInfo)
         {
             string key;

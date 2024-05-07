@@ -14,10 +14,10 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DocumentationFile />
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <FileVersion>2.0.0</FileVersion>
     <Description>This provides convenience methods to register dependencies for injection for all classes of base type T, and all classes with a specified [Attribute]</Description>
-    <Version>1.0.2</Version>
+    <Version>2.0.0</Version>
     <Authors>Jeremy Shull</Authors>
   </PropertyGroup>
 
