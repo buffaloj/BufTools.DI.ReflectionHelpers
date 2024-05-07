@@ -63,21 +63,38 @@ namespace BufTools.Extensions.DependencyInjection
         /// <summary>
         /// Registers scoped classes for dependency injection that have a class attribute of type TAttribute
         /// </summary>
+        /// <returns>The types that were registered</returns>
         /// <typeparam name="TAttribute">The type of <see cref="Attribute"/> that class to register are marked with</typeparam>
         /// <param name="services">The service collection to register classes with</param>
         /// <param name="assembly">The assembly to search within for class types</param>
-        public static void AddScopedClassesWithAttribute<TAttribute>(this IServiceCollection services, Assembly assembly)
+        public static IEnumerable<Type> AddScopedClassesWithAttribute<TAttribute>(this IServiceCollection services, Assembly assembly)
             where TAttribute : Attribute
         {
             var types = assembly.GetConcreteTypesWithAttribute<TAttribute>();
 
             foreach (var type in types)
                 services.AddScoped(type);
+
+            return types;
+        }
+
+        /// <summary>
+        /// Registers scoped classes for dependency injection that have a class attribute of type TAttribute
+        /// </summary>
+        /// <returns>The types that were registered</returns>
+        /// <typeparam name="TAttribute">The type of <see cref="Attribute"/> that class to register are marked with</typeparam>
+        /// <param name="services">The service collection to register classes with</param>
+        /// <param name="assemblies">The assemblies to search within for class types</param>
+        public static IEnumerable<Type> AddScopedClassesWithAttribute<TAttribute>(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+            where TAttribute : Attribute
+        {
+            return assemblies.SelectMany(assembly => services.AddScopedClassesWithAttribute<TAttribute>(assembly)).ToList();
         }
 
         /// <summary>
         /// Registers singleton classes for dependency injection that have a class attribute of type TAttribute
         /// </summary>
+        /// <returns>The types that were registered</returns>
         /// <typeparam name="TAttribute">The type of <see cref="Attribute"/> that class to register are marked with</typeparam>
         /// <param name="services">The service collection to register classes with</param>
         /// <param name="assembly">The assembly to search within for class types</param>
@@ -95,6 +112,7 @@ namespace BufTools.Extensions.DependencyInjection
         /// <summary>
         /// Registers singleton classes for dependency injection that have a class attribute of type TAttribute
         /// </summary>
+        /// <returns>The types that were registered</returns>
         /// <typeparam name="TAttribute">The type of <see cref="Attribute"/> that class to register are marked with</typeparam>
         /// <param name="services">The service collection to register classes with</param>
         /// <param name="assemblies">The assemblies to search within for class types</param>
@@ -107,16 +125,32 @@ namespace BufTools.Extensions.DependencyInjection
         /// <summary>
         /// Registers transient classes for dependency injection that have a class attribute of type TAttribute
         /// </summary>
+        /// <returns>The types that were registered</returns>
         /// <typeparam name="TAttribute">The type of <see cref="Attribute"/> that class to register are marked with</typeparam>
         /// <param name="services">The service collection to register classes with</param>
         /// <param name="assembly">The assembly to search within for class types</param>
-        public static void AddTransientClassesWithAttribute<TAttribute>(this IServiceCollection services, Assembly assembly)
+        public static IEnumerable<Type> AddTransientClassesWithAttribute<TAttribute>(this IServiceCollection services, Assembly assembly)
             where TAttribute : Attribute
         {
             var types = assembly.GetConcreteTypesWithAttribute<TAttribute>();
 
             foreach (var type in types)
                 services.AddTransient(type);
+
+            return types;
+        }
+
+        /// <summary>
+        /// Registers transient classes for dependency injection that have a class attribute of type TAttribute
+        /// </summary>
+        /// <returns>The types that were registered</returns>
+        /// <typeparam name="TAttribute">The type of <see cref="Attribute"/> that class to register are marked with</typeparam>
+        /// <param name="services">The service collection to register classes with</param>
+        /// <param name="assemblies">The assemblies to search within for class types</param>
+        public static IEnumerable<Type> AddTransientClassesWithAttribute<TAttribute>(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+            where TAttribute : Attribute
+        {
+            return assemblies.SelectMany(assembly => services.AddTransientClassesWithAttribute<TAttribute>(assembly)).ToList();
         }
 
         private static Type[] GetConcreteTypesWithAttribute<TAttribute>(this Assembly assembly)
